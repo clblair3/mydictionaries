@@ -207,3 +207,21 @@ ProduceDictionary={
     }
 }
 
+#for rec in ProduceDictionary:
+   # print(ProduceDictionary[rec]["cost"]*ProduceDictionary[rec]["amt_sold"])
+
+        
+
+for produce, details in ProduceDictionary.items():
+    cost = details['cost']
+    amt_sold = details['amt_sold']
+    stated_total = details['total']
+
+    calc_act_total = round(cost * amt_sold, 2)
+
+    if calc_act_total != stated_total:
+        print(f"Produce Name: {produce}")
+        print(f"Calculated Total: ${calc_act_total}")
+        print(f"Stated Total: {stated_total}")
+        print()
+        print()
